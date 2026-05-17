@@ -1,2 +1,213 @@
-# vigilaro
-Vigilaro website
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://192.168.1.97:9090/vigilaro-site/index.html -->
+<html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vigilaro — Altijd wakend over uw data</title>
+<meta name="description" content="AI-agents die uw bedrijf slimmer maken — zonder uw privacy op te offeren. AVG-proof by design.">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;&gt;&lt;text y=&#39;.9em&#39; font-size=&#39;90&#39;&gt;%F0%9F%9B%A1%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#e4e4ef;--muted:#8888a0;--accent:#7c3aed;--accent2:#a855f7;--green:#22c55e;--red:#ef4444}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent2);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{padding:20px 0;border-bottom:1px solid var(--border)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em}
+.logo span{color:var(--accent2)}
+.nav-cta{background:var(--accent);color:#fff;padding:10px 24px;border-radius:8px;font-weight:600;transition:all .3s}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px)}
+.hero{padding:120px 0 80px;text-align:center}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:24px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.25rem;color:var(--muted);max-width:600px;margin:0 auto 40px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 40px;border-radius:10px;font-size:1.1rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,.3)}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--text);margin-left:16px}
+.btn-outline:hover{border-color:var(--accent)}
+.features{padding:80px 0}
+.features h2{text-align:center;font-size:2rem;margin-bottom:60px}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;transition:all .3s}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.feature-icon{font-size:2.5rem;margin-bottom:16px}
+.feature-card h3{font-size:1.3rem;margin-bottom:12px}
+.feature-card p{color:var(--muted);font-size:.95rem}
+.steps{padding:80px 0;border-top:1px solid var(--border)}
+.steps h2{text-align:center;font-size:2rem;margin-bottom:60px}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;text-align:center}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--accent);font-size:1.5rem;font-weight:800;margin-bottom:20px}
+.step h3{margin-bottom:8px}
+.step p{color:var(--muted);font-size:.95rem}
+.security{padding:80px 0;border-top:1px solid var(--border)}
+.security-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.security h2{font-size:2rem;margin-bottom:20px}
+.security p{color:var(--muted);margin-bottom:16px;font-size:.95rem}
+.security-visual{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;text-align:center}
+.pulse{display:inline-block;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,var(--green),transparent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{box-shadow:0 0 0 30px rgba(34,197,94,0)}}
+.status-line{display:flex;align-items:center;gap:10px;margin:12px 0;font-family:monospace;font-size:.85rem;color:var(--green)}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.status-line.blocked{color:var(--red)}
+.status-line.blocked .status-dot{background:var(--red)}
+.security-features{list-style:none;margin-top:24px}
+.security-features li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.95rem}
+.security-features li::before{content:'🛡️ ';margin-right:4px}
+.pricing{padding:80px 0;border-top:1px solid var(--border)}
+.pricing h2{text-align:center;font-size:2rem;margin-bottom:16px}
+.pricing .subtitle{text-align:center;color:var(--muted);margin-bottom:60px}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px 28px;position:relative}
+.price-card.popular{border-color:var(--accent);box-shadow:0 0 40px rgba(124,58,237,.15)}
+.popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase}
+.price-card h3{font-size:1.2rem;margin-bottom:4px}
+.price-card .price{font-size:2.5rem;font-weight:800;margin:16px 0 8px}
+.price-card .price span{font-size:.9rem;color:var(--muted);font-weight:400}
+.price-card .desc{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.price-card ul{list-style:none;margin-bottom:24px}
+.price-card li{padding:6px 0;font-size:.9rem;color:var(--muted)}
+.price-card li::before{content:'✓ ';color:var(--green)}
+.price-btn{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:600;background:var(--border);color:var(--text);transition:all .3s}
+.price-btn:hover{background:var(--accent)}
+.popular .price-btn{background:var(--accent)}
+.popular .price-btn:hover{background:var(--accent2)}
+.faq{padding:80px 0;border-top:1px solid var(--border)}
+.faq h2{text-align:center;font-size:2rem;margin-bottom:40px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:16px;max-width:760px;margin-left:auto;margin-right:auto}
+.faq-item h3{font-size:1.05rem;margin-bottom:8px}
+.faq-item p{color:var(--muted);font-size:.95rem}
+.cta-footer{padding:100px 0;text-align:center;border-top:1px solid var(--border)}
+.cta-footer h2{font-size:2.5rem;font-weight:800;margin-bottom:16px}
+.cta-footer p{color:var(--muted);margin-bottom:40px;font-size:1.1rem}
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:768px){.hero{padding:80px 0 40px}.security-inner{grid-template-columns:1fr}.btn-outline{margin:16px 0 0;display:block}}
+</style>
+</head>
+<body>
+<nav><div class="container">
+<div class="logo">Vigil<span>aro</span></div>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="nav-cta">Plan een demo</a>
+</div></nav>
+
+<section class="hero"><div class="container">
+<h1>Altijd <span>wakend</span> over uw data</h1>
+<p>AI-agents die uw bedrijf slimmer maken — zonder uw privacy op te offeren. Gevoelige data blijft lokaal, rekenkracht komt uit de cloud. AVG-proof by design.</p>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="btn">Plan een demo</a>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#features" class="btn btn-outline">Hoe werkt het?</a>
+</div></section>
+
+<section class="features" id="features"><div class="container">
+<h2>Waarom Vigilaro?</h2>
+<div class="feature-grid">
+<div class="feature-card">
+<div class="feature-icon">🔀</div>
+<h3>Privacy Toggle</h3>
+<p>Eén schakelaar bepaalt wat lokaal blijft en wat naar de cloud gaat. Persoonsgegevens, contracten en financiële data verlaten nooit uw netwerk. Zware berekeningen draaien veilig in de cloud.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🛡️</div>
+<h3>Security Agent — 24/7</h3>
+<p>Een autonome bewaker monitort élke API-call en datastroom in real-time. PII gedetecteerd in een uitgaande call? Geblokkeerd. Geen enkele gevoelige byte verlaat uw systeem zonder toestemming.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🇪🇺</div>
+<h3>AVG/GDPR by Design</h3>
+<p>Europees gehost, geen datatransfers naar de VS. Volledige audit-trail van alle dataverwerking. Ontworpen voor sectoren waar privacy geen optie is maar een eis.</p>
+</div>
+</div>
+</div></section>
+
+<section class="steps" id="werking"><div class="container">
+<h2>In 3 stappen operationeel</h2>
+<div class="step-grid">
+<div class="step"><div class="step-num">1</div><h3>Verbinden</h3><p>Koppel Vigilaro aan uw bestaande systemen — email, documenten, CRM. Geen migratie nodig.</p></div>
+<div class="step"><div class="step-num">2</div><h3>Privacy regels instellen</h3><p>Bepaal per datatype wat lokaal blijft en wat naar de cloud mag. De Security Agent handhaaft uw regels automatisch.</p></div>
+<div class="step"><div class="step-num">3</div><h3>Agents deployen</h3><p>Start uw eerste AI-agent — van emailverwerking tot documentanalyse. De agent leert en verbetert zichzelf continu.</p></div>
+</div>
+</div></section>
+
+<section class="security"><div class="container">
+<div class="security-inner">
+<div>
+<h2>De Security Agent: uw digitale poortwachter</h2>
+<p>Andere AI-platforms beloven privacy in hun voorwaarden. Wij bewijzen het met technologie. De Vigilaro Security Agent draait 24/7 en inspecteert élke datastroom tussen uw agents en de buitenwereld.</p>
+<p>BSN-nummer in een uitgaand verzoek? Geblokkeerd. Medisch dossier richting een Amerikaans model? Gestopt. Financiële data zonder encryptie? Geweigerd.</p>
+<ul class="security-features">
+<li>Real-time scanning van alle API-calls</li>
+<li>Automatische PII-detectie (BSN, IBAN, medische data)</li>
+<li>Volledige audit-log voor compliance</li>
+<li>Alerts bij verdachte datapatronen</li>
+<li>Zero-trust architectuur — niets gaat eruit zonder controle</li>
+</ul>
+</div>
+<div class="security-visual">
+<div class="pulse"></div>
+<p style="margin-top:24px;font-weight:700;color:var(--green)">Security Agent actief</p>
+<div style="text-align:left;margin-top:24px">
+<div class="status-line"><div class="status-dot"></div>API call → OpenAI: tekst-analyse ✓</div>
+<div class="status-line"><div class="status-dot"></div>API call → lokaal model: contract ✓</div>
+<div class="status-line blocked"><div class="status-dot"></div>API call → cloud: BSN gedetecteerd ✗ BLOCKED</div>
+<div class="status-line"><div class="status-dot"></div>API call → email: samenvatting ✓</div>
+<div class="status-line blocked"><div class="status-dot"></div>API call → extern: IBAN gevonden ✗ BLOCKED</div>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="pricing" id="pricing"><div class="container">
+<h2>Transparante prijzen</h2>
+<p class="subtitle">Geen verborgen kosten. Maandelijks opzegbaar.</p>
+<div class="price-grid">
+<div class="price-card">
+<h3>Starter</h3>
+<div class="price">€49<span>/mnd</span></div>
+<div class="desc">Voor kennismaking met AI-agents</div>
+<ul><li>1 AI-agent</li><li>Cloud-only verwerking</li><li>Basis Security Agent</li><li>Email support</li></ul>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="price-btn">Start nu</a>
+</div>
+<div class="price-card popular">
+<div class="popular-badge">Populair</div>
+<h3>Privacy</h3>
+<div class="price">€149<span>/mnd</span></div>
+<div class="desc">Privacy Toggle + lokale verwerking</div>
+<ul><li>3 AI-agents</li><li>Privacy Toggle actief</li><li>Lokaal LLM inbegrepen</li><li>Volledige Security Agent</li><li>Audit-rapportages</li></ul>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="price-btn">Plan een demo</a>
+</div>
+<div class="price-card">
+<h3>Agency</h3>
+<div class="price">€349<span>/mnd</span></div>
+<div class="desc">Multi-agent + sales automatisering</div>
+<ul><li>10 AI-agents</li><li>Sales pipeline automatisering</li><li>Alles uit Privacy</li><li>Custom integraties</li><li>Prioriteit support</li></ul>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="price-btn">Plan een demo</a>
+</div>
+<div class="price-card">
+<h3>Enterprise</h3>
+<div class="price">Op maat</div>
+<div class="desc">Voor organisaties met specifieke eisen</div>
+<ul><li>Onbeperkt agents</li><li>On-premise deployment</li><li>SLA garantie</li><li>Dedicated support</li><li>Custom Security regels</li></ul>
+<a href="http://192.168.1.97:9090/vigilaro-site/index.html#demo" class="price-btn">Neem contact op</a>
+</div>
+</div>
+</div></section>
+
+<section class="faq" id="faq"><div class="container">
+<h2>Veelgestelde vragen</h2>
+<div class="faq-item"><h3>Hoe garandeert Vigilaro mijn privacy?</h3><p>De Privacy Toggle bepaalt per datatype wat lokaal wordt verwerkt. De Security Agent monitort 24/7 alle uitgaande datastromen en blokkeert automatisch gevoelige informatie. Alles wordt gelogd voor uw compliance-dossier.</p></div>
+<div class="faq-item"><h3>Is Vigilaro AVG/GDPR-compliant?</h3><p>Ja, by design. Persoonsgegevens worden lokaal verwerkt, er zijn geen datatransfers naar de VS, en u heeft volledige controle over welke data waar naartoe gaat. We leveren verwerkersovereenkomsten en audit-rapportages.</p></div>
+<div class="faq-item"><h3>Hoe goed zijn lokale AI-modellen vergeleken met ChatGPT?</h3><p>Lokale modellen zijn de afgelopen twee jaar enorm verbeterd. Voor taken als documentanalyse, samenvatting en classificatie presteren ze vergelijkbaar. Voor complexe analyses schakelt de Privacy Toggle automatisch over naar krachtigere cloudmodellen — maar dan alleen met geanonimiseerde data.</p></div>
+<div class="faq-item"><h3>Hoe snel ben ik operationeel?</h3><p>Gemiddeld binnen 1 week. Dag 1: verbinden met uw systemen. Dag 2-3: privacy regels configureren. Dag 4-5: eerste agents live. Wij begeleiden het volledige onboarding-proces.</p></div>
+</div></section>
+
+<section class="cta-footer" id="demo"><div class="container">
+<h2>Klaar om uw data te beschermen?</h2>
+<p>Plan een vrijblijvende demo en ontdek hoe Vigilaro uw bedrijf slimmer maakt — zonder concessies aan privacy.</p>
+<a href="mailto:hello@vigilaro.nl" class="btn">Plan een demo</a>
+</div></section>
+
+<footer><div class="container">
+<p>© 2026 Vigilaro. Altijd wakend over uw data. 🇪🇺 Europees gehost.</p>
+</div></footer>
+
+
+</body></html>
